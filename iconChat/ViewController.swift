@@ -20,13 +20,22 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var button8: UIButton!
     @IBOutlet weak var button9: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var iconImageView: UIImageView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //デリゲート
         nameTextField.delegate = self
+        //関数
+        initButton()
+        //初期アイコン
+        let iconImage = UIImage(named: "nothing")
+        iconImageView.image = iconImage
         
+    }
+    
+    func initButton() {
         //UIButtonを画像にする
         button1.setImage(UIImage.init(named: "death"), for: UIControl.State.normal)
         button2.setImage(UIImage.init(named: "girl"), for: UIControl.State.normal)
@@ -38,9 +47,47 @@ class ViewController: UIViewController,UITextFieldDelegate {
         button8.setImage(UIImage.init(named: "sportman"), for: UIControl.State.normal)
         button9.setImage(UIImage.init(named: "tono"), for: UIControl.State.normal)
         
-        
     }
     
+    //アイコンを押した時
+    @IBAction func button1(_ sender: Any) {
+        let iconImage1 = UIImage(named: "death")
+        iconImageView.image = iconImage1
+    }
+    @IBAction func button2(_ sender: Any) {
+        let iconImage2 = UIImage(named: "girl")
+        iconImageView.image = iconImage2
+    }
+    @IBAction func button3(_ sender: Any) {
+        let iconImage3 = UIImage(named: "god")
+        iconImageView.image = iconImage3
+    }
+    @IBAction func button4(_ sender: Any) {
+        let iconImage4 = UIImage(named: "hime")
+        iconImageView.image = iconImage4
+    }
+    @IBAction func button5(_ sender: Any) {
+        let iconImage5 = UIImage(named: "magicman")
+        iconImageView.image = iconImage5
+    }
+    @IBAction func button6(_ sender: Any) {
+        let iconImage6 = UIImage(named: "man")
+        iconImageView.image = iconImage6
+    }
+    @IBAction func button7(_ sender: Any) {
+        let iconImage7 = UIImage(named: "oldman")
+        iconImageView.image = iconImage7
+    }
+    @IBAction func button8(_ sender: Any) {
+        let iconImage8 = UIImage(named: "sportman")
+        iconImageView.image = iconImage8
+    }
+    @IBAction func button9(_ sender: Any) {
+        let iconImage9 = UIImage(named: "tono")
+        iconImageView.image = iconImage9
+    }
+    
+    //entryを押した時
     @IBAction func entryButton(_ sender: Any) {
         
     }
