@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -19,10 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var button7: UIButton!
     @IBOutlet weak var button8: UIButton!
     @IBOutlet weak var button9: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTextField.delegate = self
         
         //UIButtonを画像にする
         button1.setImage(UIImage.init(named: "death"), for: UIControl.State.normal)
@@ -35,12 +38,24 @@ class ViewController: UIViewController {
         button8.setImage(UIImage.init(named: "sportman"), for: UIControl.State.normal)
         button9.setImage(UIImage.init(named: "tono"), for: UIControl.State.normal)
         
+        
     }
     
     @IBAction func entryButton(_ sender: Any) {
         
     }
     
+    //キーボードを閉じる(画面タップ時)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //キーボードを閉じる(return押下し時)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
 
