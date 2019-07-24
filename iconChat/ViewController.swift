@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
 class ViewController: UIViewController,UITextFieldDelegate {
     
@@ -33,6 +34,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //初期アイコン
         let iconImage = UIImage(named: "nothing")
         iconImageView.image = iconImage
+        
         
     }
     //viewDidLoadの次に実行される
@@ -66,6 +68,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBAction func button1(_ sender: Any) {
         let iconImage1 = UIImage(named: "death")
         iconImageView.image = iconImage1
+        
     }
     @IBAction func button2(_ sender: Any) {
         let iconImage2 = UIImage(named: "girl")
@@ -122,10 +125,26 @@ class ViewController: UIViewController,UITextFieldDelegate {
                 }
                 print("DEBUG_PRINT: [displayName = \(user.displayName!)]の設定に成功しました。")
                 
-                // 画面を閉じてViewControllerに戻る
-                self.dismiss(animated: true, completion: nil)
             }
         }
+        }
+        
+        if let photoURL = URL(string: "gs://iconchat-1f5b4.appspot.com/death.png"){
+            // 表示画像を設定する
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.photoURL = photoURL
+                changeRequest.commitChanges { error in
+                    if let error = error {
+                        // プロフィールの更新でエラーが発生
+                        print("DEBUG_PRINT: " + error.localizedDescription)
+                        return
+                    }
+                    print("DEBUG_PRINT: [photURL = \(user.photoURL!)]の設定に成功しました。")
+                    
+                }
+            }
         }
         
     }
