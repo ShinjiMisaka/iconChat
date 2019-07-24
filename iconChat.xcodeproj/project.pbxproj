@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CA762396F1E995DA0425E0C5 /* Pods_iconChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F799C384691151D22378AD4 /* Pods_iconChat.framework */; };
+		D033975322E8707A00B898B9 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D033975222E8707A00B898B9 /* loginViewController.swift */; };
 		D07B5BFF22E21755006B339C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B5BFE22E21755006B339C /* AppDelegate.swift */; };
 		D07B5C0122E21755006B339C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B5C0022E21755006B339C /* ViewController.swift */; };
 		D07B5C0422E21755006B339C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C0222E21755006B339C /* Main.storyboard */; };
@@ -44,12 +45,14 @@
 		D07B5C9222E22298006B339C /* death@x3.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C8F22E22297006B339C /* death@x3.png */; };
 		D07B5C9322E22298006B339C /* death@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C9022E22297006B339C /* death@x2.png */; };
 		D0ACB9A222E346D0006F155E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */; };
+		D0DD251222E8A4E50014FED5 /* selectRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DD251122E8A4E50014FED5 /* selectRoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F799C384691151D22378AD4 /* Pods_iconChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iconChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AE7F32138CA3A1430F801E /* Pods-iconChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconChat.debug.xcconfig"; path = "Target Support Files/Pods-iconChat/Pods-iconChat.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA257EDE58C34789A246B3F /* Pods-iconChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconChat.release.xcconfig"; path = "Target Support Files/Pods-iconChat/Pods-iconChat.release.xcconfig"; sourceTree = "<group>"; };
+		D033975222E8707A00B898B9 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		D07B5BFB22E21755006B339C /* iconChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iconChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5BFE22E21755006B339C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07B5C0022E21755006B339C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		D07B5C8F22E22297006B339C /* death@x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "death@x3.png"; sourceTree = "<group>"; };
 		D07B5C9022E22297006B339C /* death@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "death@x2.png"; sourceTree = "<group>"; };
 		D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0DD251122E8A4E50014FED5 /* selectRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectRoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +120,6 @@
 				95AE7F32138CA3A1430F801E /* Pods-iconChat.debug.xcconfig */,
 				9FA257EDE58C34789A246B3F /* Pods-iconChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,6 +148,8 @@
 				D07B5BFE22E21755006B339C /* AppDelegate.swift */,
 				D07B5C0022E21755006B339C /* ViewController.swift */,
 				D07B5C0222E21755006B339C /* Main.storyboard */,
+				D033975222E8707A00B898B9 /* loginViewController.swift */,
+				D0DD251122E8A4E50014FED5 /* selectRoomViewController.swift */,
 				D07B5C0522E21756006B339C /* Assets.xcassets */,
 				D07B5C8E22E22297006B339C /* death.png */,
 				D07B5C9022E22297006B339C /* death@x2.png */,
@@ -329,7 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07B5C0122E21755006B339C /* ViewController.swift in Sources */,
+				D0DD251222E8A4E50014FED5 /* selectRoomViewController.swift in Sources */,
 				D07B5BFF22E21755006B339C /* AppDelegate.swift in Sources */,
+				D033975322E8707A00B898B9 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

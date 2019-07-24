@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController,UITextFieldDelegate {
     
@@ -32,6 +33,18 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //初期アイコン
         let iconImage = UIImage(named: "nothing")
         iconImageView.image = iconImage
+        
+    }
+    //viewDidLoadの次に実行される
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // currentUserがnilならログインしていない
+        if Auth.auth().currentUser == nil {
+            // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
         
     }
     
@@ -89,6 +102,31 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     //entryを押した時
     @IBAction func entryButton(_ sender: Any) {
+        
+        //名前が空欄なら名無しにする
+        if nameTextField.text == "" {
+            nameTextField.text = "名無し"
+        }
+        
+        if let displayName = nameTextField.text {
+        // 表示名を設定する
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let changeRequest = user.createProfileChangeRequest()
+            changeRequest.displayName = displayName
+            changeRequest.commitChanges { error in
+                if let error = error {
+                    // プロフィールの更新でエラーが発生
+                    print("DEBUG_PRINT: " + error.localizedDescription)
+                    return
+                }
+                print("DEBUG_PRINT: [displayName = \(user.displayName!)]の設定に成功しました。")
+                
+                // 画面を閉じてViewControllerに戻る
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        }
         
     }
     
