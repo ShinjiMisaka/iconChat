@@ -23,6 +23,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var button9: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var iconImageView: UIImageView!
+    var iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/nothing.png")
+    
     
 
     override func viewDidLoad() {
@@ -68,39 +70,47 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBAction func button1(_ sender: Any) {
         let iconImage1 = UIImage(named: "death")
         iconImageView.image = iconImage1
-        
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/death.png")
     }
     @IBAction func button2(_ sender: Any) {
         let iconImage2 = UIImage(named: "girl")
         iconImageView.image = iconImage2
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/girl.png")
     }
     @IBAction func button3(_ sender: Any) {
         let iconImage3 = UIImage(named: "god")
         iconImageView.image = iconImage3
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/god.png")
     }
     @IBAction func button4(_ sender: Any) {
         let iconImage4 = UIImage(named: "hime")
         iconImageView.image = iconImage4
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/hime.png")
     }
     @IBAction func button5(_ sender: Any) {
         let iconImage5 = UIImage(named: "magicman")
         iconImageView.image = iconImage5
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/magicman.png")
     }
     @IBAction func button6(_ sender: Any) {
         let iconImage6 = UIImage(named: "man")
         iconImageView.image = iconImage6
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/man.png")
     }
     @IBAction func button7(_ sender: Any) {
         let iconImage7 = UIImage(named: "oldman")
         iconImageView.image = iconImage7
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/oldman.png")
     }
     @IBAction func button8(_ sender: Any) {
         let iconImage8 = UIImage(named: "sportman")
         iconImageView.image = iconImage8
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/sportman.png")
     }
     @IBAction func button9(_ sender: Any) {
         let iconImage9 = UIImage(named: "tono")
         iconImageView.image = iconImage9
+        iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/tono.png")
     }
     
     //entryを押した時
@@ -129,7 +139,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         }
         }
         
-        if let photoURL = URL(string: "gs://iconchat-1f5b4.appspot.com/death.png"){
+        if let photoURL = iconURL {
             // 表示画像を設定する
             let user = Auth.auth().currentUser
             if let user = user {
