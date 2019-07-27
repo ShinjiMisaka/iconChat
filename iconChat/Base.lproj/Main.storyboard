@@ -211,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="144" y="877"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Chat Room View Controller-->
         <scene sceneID="vU6-0a-F5E">
             <objects>
-                <viewController id="Lrt-ws-oS2" customClass="chatViewController" customModule="iconChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lrt-ws-oS2" customClass="chatRoomViewController" customModule="iconChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ybo-zo-znq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
