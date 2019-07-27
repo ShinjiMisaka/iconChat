@@ -2,7 +2,7 @@
 //  postTableViewCell.swift
 //  iconChat
 //
-//  Created by 三坂真治 on 2019/07/26.
+//  Created by 三坂真治 on 2019/07/27.
 //  Copyright © 2019 shinji.misaka. All rights reserved.
 //
 

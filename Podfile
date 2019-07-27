@@ -11,5 +11,6 @@ target 'iconChat' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'FirebaseUI/Storage'
+  pod 'SVProgressHUD','2.2.5'
 
 end

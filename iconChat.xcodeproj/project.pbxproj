@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA762396F1E995DA0425E0C5 /* Pods_iconChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F799C384691151D22378AD4 /* Pods_iconChat.framework */; };
 		D033975322E8707A00B898B9 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D033975222E8707A00B898B9 /* loginViewController.swift */; };
-		D043C9F222EA3C3500170150 /* postTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043C9F022EA3C3500170150 /* postTableViewCell.swift */; };
-		D043C9F322EA3C3500170150 /* postTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D043C9F122EA3C3500170150 /* postTableViewCell.xib */; };
+		D0555FE822EBFD23009A1AFB /* RoomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0555FE722EBFD23009A1AFB /* RoomDate.swift */; };
 		D05D03EC22EA97CA009B0453 /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D03EB22EA97CA009B0453 /* chatViewController.swift */; };
 		D079493722EA8358009795FB /* roomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D079493522EA8358009795FB /* roomTableViewCell.swift */; };
 		D079493822EA8358009795FB /* roomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D079493622EA8358009795FB /* roomTableViewCell.xib */; };
@@ -50,6 +49,8 @@
 		D07B5C9122E22298006B339C /* death.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C8E22E22297006B339C /* death.png */; };
 		D07B5C9222E22298006B339C /* death@x3.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C8F22E22297006B339C /* death@x3.png */; };
 		D07B5C9322E22298006B339C /* death@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C9022E22297006B339C /* death@x2.png */; };
+		D0879CEE22EC1D110014D64A /* postTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0879CEC22EC1D110014D64A /* postTableViewCell.swift */; };
+		D0879CEF22EC1D110014D64A /* postTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0879CED22EC1D110014D64A /* postTableViewCell.xib */; };
 		D0ACB9A222E346D0006F155E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */; };
 		D0DD251222E8A4E50014FED5 /* selectRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DD251122E8A4E50014FED5 /* selectRoomViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,8 +60,7 @@
 		95AE7F32138CA3A1430F801E /* Pods-iconChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconChat.debug.xcconfig"; path = "Target Support Files/Pods-iconChat/Pods-iconChat.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA257EDE58C34789A246B3F /* Pods-iconChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconChat.release.xcconfig"; path = "Target Support Files/Pods-iconChat/Pods-iconChat.release.xcconfig"; sourceTree = "<group>"; };
 		D033975222E8707A00B898B9 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
-		D043C9F022EA3C3500170150 /* postTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postTableViewCell.swift; sourceTree = "<group>"; };
-		D043C9F122EA3C3500170150 /* postTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = postTableViewCell.xib; sourceTree = "<group>"; };
+		D0555FE722EBFD23009A1AFB /* RoomDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDate.swift; sourceTree = "<group>"; };
 		D05D03EB22EA97CA009B0453 /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		D079493522EA8358009795FB /* roomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomTableViewCell.swift; sourceTree = "<group>"; };
 		D079493622EA8358009795FB /* roomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = roomTableViewCell.xib; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		D07B5C8E22E22297006B339C /* death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = death.png; sourceTree = "<group>"; };
 		D07B5C8F22E22297006B339C /* death@x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "death@x3.png"; sourceTree = "<group>"; };
 		D07B5C9022E22297006B339C /* death@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "death@x2.png"; sourceTree = "<group>"; };
+		D0879CEC22EC1D110014D64A /* postTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postTableViewCell.swift; sourceTree = "<group>"; };
+		D0879CED22EC1D110014D64A /* postTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = postTableViewCell.xib; sourceTree = "<group>"; };
 		D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0DD251122E8A4E50014FED5 /* selectRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectRoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,17 +159,18 @@
 			isa = PBXGroup;
 			children = (
 				D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */,
+				D0555FE722EBFD23009A1AFB /* RoomDate.swift */,
 				D07B5BFE22E21755006B339C /* AppDelegate.swift */,
 				D07B5C0022E21755006B339C /* ViewController.swift */,
 				D07B5C0222E21755006B339C /* Main.storyboard */,
 				D033975222E8707A00B898B9 /* loginViewController.swift */,
 				D0DD251122E8A4E50014FED5 /* selectRoomViewController.swift */,
 				D079493922EA85F2009795FB /* createRoomViewController.swift */,
+				D05D03EB22EA97CA009B0453 /* chatViewController.swift */,
 				D079493522EA8358009795FB /* roomTableViewCell.swift */,
 				D079493622EA8358009795FB /* roomTableViewCell.xib */,
-				D043C9F022EA3C3500170150 /* postTableViewCell.swift */,
-				D043C9F122EA3C3500170150 /* postTableViewCell.xib */,
-				D05D03EB22EA97CA009B0453 /* chatViewController.swift */,
+				D0879CEC22EC1D110014D64A /* postTableViewCell.swift */,
+				D0879CED22EC1D110014D64A /* postTableViewCell.xib */,
 				D07B5C0522E21756006B339C /* Assets.xcassets */,
 				D07B5C8E22E22297006B339C /* death.png */,
 				D07B5C9022E22297006B339C /* death@x2.png */,
@@ -268,6 +271,7 @@
 				D07B5C7E22E21FD5006B339C /* magicman.png in Resources */,
 				D07B5C8922E21FD5006B339C /* oldman.png in Resources */,
 				D07B5C9122E22298006B339C /* death.png in Resources */,
+				D0879CEF22EC1D110014D64A /* postTableViewCell.xib in Resources */,
 				D07B5C8A22E21FD5006B339C /* girl@2x.png in Resources */,
 				D07B5C7322E21FD5006B339C /* god@2x.png in Resources */,
 				D07B5C8C22E21FD5006B339C /* oldman@2x.png in Resources */,
@@ -284,7 +288,6 @@
 				D07B5C9222E22298006B339C /* death@x3.png in Resources */,
 				D07B5C7D22E21FD5006B339C /* magicman@2x.png in Resources */,
 				D07B5C7422E21FD5006B339C /* hime@3x.png in Resources */,
-				D043C9F322EA3C3500170150 /* postTableViewCell.xib in Resources */,
 				D07B5C8022E21FD5006B339C /* god.png in Resources */,
 				D07B5C7C22E21FD5006B339C /* tono@3x.png in Resources */,
 				D07B5C8422E21FD5006B339C /* sportman@2x.png in Resources */,
@@ -356,11 +359,12 @@
 				D07B5C0122E21755006B339C /* ViewController.swift in Sources */,
 				D0DD251222E8A4E50014FED5 /* selectRoomViewController.swift in Sources */,
 				D05D03EC22EA97CA009B0453 /* chatViewController.swift in Sources */,
+				D0879CEE22EC1D110014D64A /* postTableViewCell.swift in Sources */,
+				D0555FE822EBFD23009A1AFB /* RoomDate.swift in Sources */,
 				D079493722EA8358009795FB /* roomTableViewCell.swift in Sources */,
 				D07B5BFF22E21755006B339C /* AppDelegate.swift in Sources */,
 				D033975322E8707A00B898B9 /* loginViewController.swift in Sources */,
 				D079493A22EA85F2009795FB /* createRoomViewController.swift in Sources */,
-				D043C9F222EA3C3500170150 /* postTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

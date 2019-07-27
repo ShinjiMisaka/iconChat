@@ -9,6 +9,11 @@
 import UIKit
 
 class roomTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var roomNameLabel: UILabel!
+    @IBOutlet weak var roomNumberLabel: UILabel!
+    @IBOutlet weak var entryButton: UIButton!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +24,15 @@ class roomTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setRoomData(_ roomData: RoomData) {
+        
+        self.roomNameLabel.text = "\(roomData.roomName!)"
+        
+        self.roomNumberLabel.text = "\(roomData.users.count)/\(roomData.number)"
+        
+        
     }
     
 }
