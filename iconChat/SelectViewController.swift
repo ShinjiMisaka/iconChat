@@ -1,14 +1,14 @@
 //
-//  chatRoomViewController.swift
+//  SelectViewController.swift
 //  iconChat
 //
-//  Created by 三坂真治 on 2019/07/27.
+//  Created by 三坂真治 on 2019/07/29.
 //  Copyright © 2019 shinji.misaka. All rights reserved.
 //
 
 import UIKit
 
-class chatRoomViewController: UIViewController {
+class SelectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
