@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CA762396F1E995DA0425E0C5 /* Pods_iconChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F799C384691151D22378AD4 /* Pods_iconChat.framework */; };
 		D033975322E8707A00B898B9 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D033975222E8707A00B898B9 /* loginViewController.swift */; };
+		D064D9BE22EF79940072E83E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D9BC22EF79940072E83E /* PostTableViewCell.swift */; };
+		D064D9BF22EF79940072E83E /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D064D9BD22EF79940072E83E /* PostTableViewCell.xib */; };
 		D07B5BFF22E21755006B339C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B5BFE22E21755006B339C /* AppDelegate.swift */; };
 		D07B5C0122E21755006B339C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B5C0022E21755006B339C /* ViewController.swift */; };
 		D07B5C0422E21755006B339C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07B5C0222E21755006B339C /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		95AE7F32138CA3A1430F801E /* Pods-iconChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconChat.debug.xcconfig"; path = "Target Support Files/Pods-iconChat/Pods-iconChat.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA257EDE58C34789A246B3F /* Pods-iconChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconChat.release.xcconfig"; path = "Target Support Files/Pods-iconChat/Pods-iconChat.release.xcconfig"; sourceTree = "<group>"; };
 		D033975222E8707A00B898B9 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		D064D9BC22EF79940072E83E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		D064D9BD22EF79940072E83E /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		D07B5BFB22E21755006B339C /* iconChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iconChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5BFE22E21755006B339C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07B5C0022E21755006B339C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,10 +154,13 @@
 			children = (
 				D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */,
 				D07B5BFE22E21755006B339C /* AppDelegate.swift */,
+				D0F42A2822EE2AA000B95BAD /* SelectViewController.swift */,
 				D0F42A2A22EE2E3D00B95BAD /* PostDate.swift */,
+				D064D9BC22EF79940072E83E /* PostTableViewCell.swift */,
+				D064D9BD22EF79940072E83E /* PostTableViewCell.xib */,
+				D0F42A2622EE282E00B95BAD /* Room1ViewController.swift */,
 				D07B5C0022E21755006B339C /* ViewController.swift */,
 				D07B5C0222E21755006B339C /* Main.storyboard */,
-				D0F42A2622EE282E00B95BAD /* Room1ViewController.swift */,
 				D033975222E8707A00B898B9 /* loginViewController.swift */,
 				D07B5C0522E21756006B339C /* Assets.xcassets */,
 				D07B5C8E22E22297006B339C /* death.png */,
@@ -188,7 +195,6 @@
 				D07B5C5E22E21FD3006B339C /* tono@3x.png */,
 				D07B5C0722E21756006B339C /* LaunchScreen.storyboard */,
 				D07B5C0A22E21756006B339C /* Info.plist */,
-				D0F42A2822EE2AA000B95BAD /* SelectViewController.swift */,
 			);
 			path = iconChat;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				D07B5C8B22E21FD5006B339C /* sportman.png in Resources */,
 				D07B5C7822E21FD5006B339C /* magicman@3x.png in Resources */,
 				D07B5C7A22E21FD5006B339C /* man@2x.png in Resources */,
+				D064D9BF22EF79940072E83E /* PostTableViewCell.xib in Resources */,
 				D07B5C8122E21FD5006B339C /* nothing@2x.png in Resources */,
 				D07B5C0922E21756006B339C /* LaunchScreen.storyboard in Resources */,
 				D07B5C0622E21756006B339C /* Assets.xcassets in Resources */,
@@ -339,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D9BE22EF79940072E83E /* PostTableViewCell.swift in Sources */,
 				D07B5C0122E21755006B339C /* ViewController.swift in Sources */,
 				D0F42A2722EE282E00B95BAD /* Room1ViewController.swift in Sources */,
 				D0F42A2922EE2AA000B95BAD /* SelectViewController.swift in Sources */,

@@ -407,7 +407,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部屋の人数はoo人です" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7d-gM-pye">
-                                <rect key="frame" x="50" y="20" width="270" height="30"/>
+                                <rect key="frame" x="80" y="20" width="240" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rwv-gf-91b"/>
                                 </constraints>
@@ -443,16 +443,25 @@
                                 <rect key="frame" x="0.0" y="50" width="320" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Glq-wq-5lC">
+                                <rect key="frame" x="50" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="lFQ-PV-Ija"/>
+                                    <constraint firstAttribute="height" constant="30" id="onX-dU-CKK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KzB-TU-0NY" firstAttribute="trailing" secondItem="tvN-qh-ui1" secondAttribute="trailing" id="2Nt-xn-QhR"/>
+                            <constraint firstItem="Glq-wq-5lC" firstAttribute="leading" secondItem="dNR-VF-r0V" secondAttribute="trailing" id="5hQ-1N-JsA"/>
                             <constraint firstItem="b7d-gM-pye" firstAttribute="top" secondItem="KzB-TU-0NY" secondAttribute="top" id="6fo-r9-G2a"/>
                             <constraint firstAttribute="bottom" secondItem="Crr-9Y-XLe" secondAttribute="bottom" id="8Rd-at-vtW"/>
+                            <constraint firstItem="b7d-gM-pye" firstAttribute="leading" secondItem="Glq-wq-5lC" secondAttribute="trailing" id="8w8-Oa-33A"/>
+                            <constraint firstItem="Glq-wq-5lC" firstAttribute="top" secondItem="dNR-VF-r0V" secondAttribute="top" id="9U1-Ha-ZYA"/>
                             <constraint firstItem="dNR-VF-r0V" firstAttribute="leading" secondItem="KzB-TU-0NY" secondAttribute="leading" id="Dpp-zp-31P"/>
                             <constraint firstAttribute="bottom" secondItem="Crr-9Y-XLe" secondAttribute="bottom" id="IlL-pF-Y61"/>
                             <constraint firstItem="Ry1-l2-3BT" firstAttribute="leading" secondItem="KzB-TU-0NY" secondAttribute="leading" id="LOt-7V-Jnt"/>
-                            <constraint firstItem="b7d-gM-pye" firstAttribute="leading" secondItem="dNR-VF-r0V" secondAttribute="trailing" id="PjW-3e-RtY"/>
                             <constraint firstItem="Crr-9Y-XLe" firstAttribute="centerY" secondItem="Ry1-l2-3BT" secondAttribute="centerY" id="Qe9-sn-vws"/>
                             <constraint firstItem="dNR-VF-r0V" firstAttribute="top" secondItem="KzB-TU-0NY" secondAttribute="top" id="RHD-Yz-H28"/>
                             <constraint firstItem="tvN-qh-ui1" firstAttribute="top" secondItem="dNR-VF-r0V" secondAttribute="bottom" id="ZQs-Tw-3O8"/>
@@ -467,7 +476,9 @@
                         <viewLayoutGuide key="safeArea" id="KzB-TU-0NY"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="Glq-wq-5lC" id="qoS-Cs-IeM"/>
                         <outlet property="numberLabel" destination="b7d-gM-pye" id="azk-ta-4pA"/>
+                        <outlet property="tableView" destination="tvN-qh-ui1" id="2dc-86-DuI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJX-HV-uJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
