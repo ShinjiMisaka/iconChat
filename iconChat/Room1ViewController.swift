@@ -8,9 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 import SVProgressHUD
 
 class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+    
     
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
@@ -26,8 +28,14 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let photoURLString = Auth.auth().currentUser?.photoURL?.absoluteString
+        let reference = Storage.storage().reference(forURL: photoURLString!)
+        
+        self.imageView.sd_setImage(with: reference)
+        
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "入室しました")
+        SVProgressHUD.dismiss(withDelay: 1)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,7 +49,6 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
         // テーブル行の高さをAutoLayoutで自動調整する
         tableView.rowHeight = UITableView.automaticDimension
         // テーブル行の高さの概算値を設定しておく
-        // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
         tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
 
     }
@@ -134,38 +141,17 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "退室しました")
+        SVProgressHUD.dismiss(withDelay: 1)
         
     }
     //送信ボタン
     @IBAction func sentButton(_ sender: Any) {
-        // Get a reference to the storage service using the default Firebase App
-        let storage = Storage.storage()
-        
-        // Create a storage reference from our storage service
-        let storageRef = storage.reference()
-        
-        // Reference to an image file in Firebase Storage
-        let reference = storageRef.child("Auth.auth().currentUser?.photoURL")
-        
-        // UIImageView in your ViewController
-        let imageView: UIImageView = self.imageView
-        
-        // Placeholder image
-        let placeholderImage = UIImage(named: "placeholder.jpg")
-        
-        // Load the image using SDWebImage
-        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-        
         // ImageViewから画像を取得する
-        let imageData = imageView.image!.jpegData(compressionQuality: 0.5)
+        let imageData = self.imageView.image!.jpegData(compressionQuality: 0.5)
         let imageString = imageData!.base64EncodedString(options: .lineLength64Characters)
         // postDataに必要な情報を取得しておく
         let name = Auth.auth().currentUser?.displayName
-        let comment = commentTextField.text!
-        
-        
-        
-
+        let comment = commentTextField.text
         // 辞書を作成してFirebaseに保存する
         let postRef = Database.database().reference().child("Room1")
         let postDic = ["comment": comment , "image": imageString, "name": name!]

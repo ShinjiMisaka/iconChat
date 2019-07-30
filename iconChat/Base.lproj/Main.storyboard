@@ -84,7 +84,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="entryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fi4-Qh-elS"/>
+                                    <action selector="entryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SV8-x2-HXE"/>
                                     <segue destination="r0R-ar-Wr3" kind="show" id="SZr-A4-6R0"/>
                                 </connections>
                             </button>
@@ -435,13 +435,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="s19-80-asN"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tvN-qh-ui1">
                                 <rect key="frame" x="0.0" y="50" width="320" height="488"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Glq-wq-5lC">
                                 <rect key="frame" x="50" y="20" width="30" height="30"/>
@@ -476,6 +475,7 @@
                         <viewLayoutGuide key="safeArea" id="KzB-TU-0NY"/>
                     </view>
                     <connections>
+                        <outlet property="commentTextField" destination="Ry1-l2-3BT" id="iqD-9T-QXk"/>
                         <outlet property="imageView" destination="Glq-wq-5lC" id="qoS-Cs-IeM"/>
                         <outlet property="numberLabel" destination="b7d-gM-pye" id="azk-ta-4pA"/>
                         <outlet property="tableView" destination="tvN-qh-ui1" id="2dc-86-DuI"/>
