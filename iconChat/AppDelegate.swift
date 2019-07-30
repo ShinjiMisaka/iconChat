@@ -18,6 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        // ナビゲージョンアイテムの文字色
+        UINavigationBar.appearance().tintColor = UIColor.white
+        // ナビゲーションバーのタイトルの文字色
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        // ナビゲーションバーの背景色
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        
+        // ナビゲーションバーの背景の透過
+        (UINavigationBar.appearance() as UINavigationBar).setBackgroundImage(UIImage(), for: .default)
+        // ナビゲーションバーの下の影を無くす
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
         return true
     }
 
@@ -42,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
 
 
 }

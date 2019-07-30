@@ -38,6 +38,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
         let iconImage = UIImage(named: "nothing")
         iconImageView.image = iconImage
         
+        // タイトルをセット
+        self.navigationItem.title = "アイコン作成"
+        
         
     }
     //viewDidLoadの次に実行される
@@ -191,6 +194,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
 
 }
 

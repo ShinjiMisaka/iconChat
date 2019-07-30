@@ -13,6 +13,9 @@ class SelectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // タイトルをセット
+        self.navigationItem.title = "部屋一覧"
 
         // Do any additional setup after loading the view.
     }
