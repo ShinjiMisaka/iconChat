@@ -1,17 +1,9 @@
-//
-//  Room1ViewController.swift
-//  iconChat
-//
-//  Created by 三坂真治 on 2019/07/29.
-//  Copyright © 2019 shinji.misaka. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FirebaseUI
 import SVProgressHUD
 
-class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBOutlet weak var commentTextField: UITextField!
@@ -50,7 +42,7 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.rowHeight = UITableView.automaticDimension
         // テーブル行の高さの概算値を設定しておく
         tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +64,7 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
         if Auth.auth().currentUser != nil {
             if self.observing == false {
                 // 要素が追加されたらpostArrayに追加してTableViewを再表示する
-                let postsRef = Database.database().reference().child("Room1")
+                let postsRef = Database.database().reference().child("Room2")
                 postsRef.observe(.childAdded, with: { snapshot in
                     print("DEBUG_PRINT: .childAddedイベントが発生しました。")
                     
@@ -124,7 +116,7 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
                 postArray = []
                 tableView.reloadData()
                 // オブザーバーを削除する
-                let postsRef = Database.database().reference().child("Room1")
+                let postsRef = Database.database().reference().child("Room2")
                 postsRef.removeAllObservers()
                 
                 // DatabaseのobserveEventが上記コードにより解除されたため
@@ -153,11 +145,13 @@ class Room1ViewController: UIViewController, UITableViewDataSource, UITableViewD
         let name = Auth.auth().currentUser?.displayName
         let comment = commentTextField.text
         // 辞書を作成してFirebaseに保存する
-        let postRef = Database.database().reference().child("Room1")
+        let postRef = Database.database().reference().child("Room2")
         let postDic = ["comment": comment , "image": imageString, "name": name!]
         postRef.childByAutoId().setValue(postDic)
         
+        commentTextField.text = ""
     }
     
     
 }
+
