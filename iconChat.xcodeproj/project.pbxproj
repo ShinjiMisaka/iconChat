@@ -54,6 +54,9 @@
 		D0F42A2722EE282E00B95BAD /* Room1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F42A2622EE282E00B95BAD /* Room1ViewController.swift */; };
 		D0F42A2922EE2AA000B95BAD /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F42A2822EE2AA000B95BAD /* SelectViewController.swift */; };
 		D0F42A2B22EE2E3D00B95BAD /* PostDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F42A2A22EE2E3D00B95BAD /* PostDate.swift */; };
+		D0FDD96822F4408200534614 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FDD96522F4408100534614 /* icon.png */; };
+		D0FDD96922F4408200534614 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FDD96622F4408100534614 /* icon@2x.png */; };
+		D0FDD96A22F4408200534614 /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FDD96722F4408100534614 /* icon@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,9 @@
 		D0F42A2622EE282E00B95BAD /* Room1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room1ViewController.swift; sourceTree = "<group>"; };
 		D0F42A2822EE2AA000B95BAD /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		D0F42A2A22EE2E3D00B95BAD /* PostDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDate.swift; sourceTree = "<group>"; };
+		D0FDD96522F4408100534614 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		D0FDD96622F4408100534614 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		D0FDD96722F4408100534614 /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,9 @@
 				D0C7D4CC22F3E07B0003D6A2 /* common */,
 				D07B5C0222E21755006B339C /* Main.storyboard */,
 				D07B5C0522E21756006B339C /* Assets.xcassets */,
+				D0FDD96522F4408100534614 /* icon.png */,
+				D0FDD96622F4408100534614 /* icon@2x.png */,
+				D0FDD96722F4408100534614 /* icon@3x.png */,
 				D0454E4222F3E7D100428E8A /* nothing2.png */,
 				D0454E4122F3E7D100428E8A /* nothing2@2x.png */,
 				D0454E4022F3E7D100428E8A /* nothing2@3x.png */,
@@ -287,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FDD96A22F4408200534614 /* icon@3x.png in Resources */,
 				D07B5C7E22E21FD5006B339C /* magicman.png in Resources */,
 				D07B5C8922E21FD5006B339C /* oldman.png in Resources */,
 				D07B5C9122E22298006B339C /* death.png in Resources */,
@@ -307,9 +317,11 @@
 				D07B5C9222E22298006B339C /* death@x3.png in Resources */,
 				D07B5C7D22E21FD5006B339C /* magicman@2x.png in Resources */,
 				D07B5C7422E21FD5006B339C /* hime@3x.png in Resources */,
+				D0FDD96822F4408200534614 /* icon.png in Resources */,
 				D0454E4422F3E7D100428E8A /* nothing2@2x.png in Resources */,
 				D07B5C8022E21FD5006B339C /* god.png in Resources */,
 				D07B5C7C22E21FD5006B339C /* tono@3x.png in Resources */,
+				D0FDD96922F4408200534614 /* icon@2x.png in Resources */,
 				D0454E4322F3E7D100428E8A /* nothing2@3x.png in Resources */,
 				D07B5C8422E21FD5006B339C /* sportman@2x.png in Resources */,
 				D07B5C7722E21FD5006B339C /* girl.png in Resources */,
@@ -530,7 +542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95AE7F32138CA3A1430F801E /* Pods-iconChat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R572RCVA7U;
 				INFOPLIST_FILE = iconChat/Info.plist;
@@ -549,7 +561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FA257EDE58C34789A246B3F /* Pods-iconChat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R572RCVA7U;
 				INFOPLIST_FILE = iconChat/Info.plist;

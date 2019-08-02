@@ -27,7 +27,6 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let photoURLString = Auth.auth().currentUser?.photoURL?.absoluteString
         let reference = Storage.storage().reference(forURL: photoURLString!)
         
@@ -154,6 +153,9 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         // postDataに必要な情報を取得しておく
         let name = Auth.auth().currentUser?.displayName
         let comment = commentTextField.text
+        if comment == "" {
+            return
+        }
         // 辞書を作成してFirebaseに保存する
         let postRef = Database.database().reference().child("Room1")
         let postDic = ["comment": comment , "image": imageString, "name": name!]

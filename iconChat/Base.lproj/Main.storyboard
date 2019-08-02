@@ -180,7 +180,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYq-07-hiI">
                                 <rect key="frame" x="0.0" y="64" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.47002823605647381" green="1" blue="0.72680100598690955" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.35736418607346976" green="0.9647553563117981" blue="0.59631590958005454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Room1"/>
                                 <connections>
