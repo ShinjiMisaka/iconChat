@@ -24,7 +24,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var button9: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var iconImageView: UIImageView!
-    var iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/nothing.png")
+    var iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/nothing2.png")
     
     
 
@@ -35,7 +35,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //関数
         initButton()
         //初期アイコン
-        let iconImage = UIImage(named: "nothing")
+        let iconImage = UIImage(named: "nothing2")
         iconImageView.image = iconImage
         
         // タイトルをセット
@@ -137,6 +137,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBAction func entryButton(_ sender: Any) {
         
         SVProgressHUD.show(withStatus: "読み込み中")
+        //無効
+        UIApplication.shared.beginIgnoringInteractionEvents()
         //名前が空欄なら名無しにする
         if nameTextField.text == "" {
             nameTextField.text = "名無し"
@@ -176,6 +178,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
                     //アイコン作成
                     SVProgressHUD.showSuccess(withStatus: "完了")
                     SVProgressHUD.dismiss(withDelay: 1)
+                    // タッチイベントを有効にする.
+                    UIApplication.shared.endIgnoringInteractionEvents()
                 }
             }
         }

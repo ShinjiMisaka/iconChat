@@ -1,9 +1,17 @@
+//
+//  Room1ViewController.swift
+//  iconChat
+//
+//  Created by 三坂真治 on 2019/07/29.
+//  Copyright © 2019 shinji.misaka. All rights reserved.
+//
+
 import UIKit
 import Firebase
 import FirebaseUI
 import SVProgressHUD
 
-class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBOutlet weak var commentTextField: UITextField!
@@ -11,7 +19,6 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
-    var number : Int = 0
     var postArray: [PostData] = []
     // DatabaseのobserveEventの登録状態を表す
     var observing = false
@@ -19,6 +26,7 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let photoURLString = Auth.auth().currentUser?.photoURL?.absoluteString
         let reference = Storage.storage().reference(forURL: photoURLString!)
@@ -28,7 +36,8 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "入室しました")
         SVProgressHUD.dismiss(withDelay: 1)
-        
+        //デリゲート
+        commentTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -42,7 +51,7 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.rowHeight = UITableView.automaticDimension
         // テーブル行の高さの概算値を設定しておく
         tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
-        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +73,7 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         if Auth.auth().currentUser != nil {
             if self.observing == false {
                 // 要素が追加されたらpostArrayに追加してTableViewを再表示する
-                let postsRef = Database.database().reference().child("Room2")
+                let postsRef = Database.database().reference().child("Room1")
                 postsRef.observe(.childAdded, with: { snapshot in
                     print("DEBUG_PRINT: .childAddedイベントが発生しました。")
                     
@@ -116,7 +125,7 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
                 postArray = []
                 tableView.reloadData()
                 // オブザーバーを削除する
-                let postsRef = Database.database().reference().child("Room2")
+                let postsRef = Database.database().reference().child("Room1")
                 postsRef.removeAllObservers()
                 
                 // DatabaseのobserveEventが上記コードにより解除されたため
@@ -128,12 +137,13 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     //退室ボタン
     @IBAction func outButton(_ sender: Any) {
-        
         // 全てのモーダルを閉じる
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "退室しました")
         SVProgressHUD.dismiss(withDelay: 1)
+        // キーボードを閉じる
+        commentTextField.resignFirstResponder()
         
     }
     //送信ボタン
@@ -145,13 +155,24 @@ class Room2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         let name = Auth.auth().currentUser?.displayName
         let comment = commentTextField.text
         // 辞書を作成してFirebaseに保存する
-        let postRef = Database.database().reference().child("Room2")
+        let postRef = Database.database().reference().child("Room1")
         let postDic = ["comment": comment , "image": imageString, "name": name!]
         postRef.childByAutoId().setValue(postDic)
         
         commentTextField.text = ""
     }
     
+    //キーボードを閉じる(画面タップ時)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        self.tableView.endEditing(true)
+    }
+    
+    //キーボードを閉じる(return押下し時)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
-

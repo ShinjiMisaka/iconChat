@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 
 class SelectViewController: UIViewController {
@@ -20,6 +21,16 @@ class SelectViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func room1Button(_ sender: Any) {
+    }
+    @IBAction func room2Button(_ sender: Any) {
+    }
+    @IBAction func room3Button(_ sender: Any) {
+    }
+    @IBAction func room4Button(_ sender: Any) {
+    }
+    @IBAction func room5Button(_ sender: Any) {
+    }
     
 
 }
