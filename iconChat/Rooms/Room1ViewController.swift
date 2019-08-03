@@ -20,16 +20,17 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @IBOutlet weak var imageView: UIImageView!
     
     var postArray: [PostData] = []
+    // インスタンス変数
+    var DBRef:DatabaseReference!
     // DatabaseのobserveEventの登録状態を表す
     var observing = false
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //アイコンの設定
         let photoURLString = Auth.auth().currentUser?.photoURL?.absoluteString
         let reference = Storage.storage().reference(forURL: photoURLString!)
-        
         self.imageView.sd_setImage(with: reference)
         
         // HUDで投稿完了を表示する
@@ -136,6 +137,7 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     
     //退室ボタン
     @IBAction func outButton(_ sender: Any) {
+        
         // 全てのモーダルを閉じる
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
         // HUDで投稿完了を表示する

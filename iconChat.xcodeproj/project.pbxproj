@@ -167,13 +167,14 @@
 			isa = PBXGroup;
 			children = (
 				D0ACB9A122E346D0006F155E /* GoogleService-Info.plist */,
+				D07B5C0722E21756006B339C /* LaunchScreen.storyboard */,
 				D07B5BFE22E21755006B339C /* AppDelegate.swift */,
 				D033975222E8707A00B898B9 /* loginViewController.swift */,
 				D07B5C0022E21755006B339C /* ViewController.swift */,
 				D0F42A2822EE2AA000B95BAD /* SelectViewController.swift */,
+				D07B5C0222E21755006B339C /* Main.storyboard */,
 				D0D9BAE822F3C1E100C3CB37 /* Rooms */,
 				D0C7D4CC22F3E07B0003D6A2 /* common */,
-				D07B5C0222E21755006B339C /* Main.storyboard */,
 				D07B5C0522E21756006B339C /* Assets.xcassets */,
 				D0FDD96522F4408100534614 /* icon.png */,
 				D0FDD96622F4408100534614 /* icon@2x.png */,
@@ -208,7 +209,6 @@
 				D07B5C6822E21FD4006B339C /* tono.png */,
 				D07B5C5D22E21FD3006B339C /* tono@2x.png */,
 				D07B5C5E22E21FD3006B339C /* tono@3x.png */,
-				D07B5C0722E21756006B339C /* LaunchScreen.storyboard */,
 				D07B5C0A22E21756006B339C /* Info.plist */,
 			);
 			path = iconChat;
