@@ -61,6 +61,8 @@ class Room4ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         super.viewWillAppear(animated)
         print("DEBUG_PRINT: viewWillAppear")
         
+        configureObserver()  //Notification発行
+        
         if Auth.auth().currentUser != nil {
             if self.observing == false {
                 // 要素が追加されたらpostArrayに追加してTableViewを再表示する
@@ -146,12 +148,18 @@ class Room4ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         // postDataに必要な情報を取得しておく
         let name = Auth.auth().currentUser?.displayName
         let comment = commentTextField.text
+        //空欄は送れない
+        if comment == "" {
+            return
+        }
         // 辞書を作成してFirebaseに保存する
         let postRef = Database.database().reference().child("Room4")
         let postDic = ["comment": comment , "image": imageString, "name": name!]
         postRef.childByAutoId().setValue(postDic)
         
         commentTextField.text = ""
+        // キーボードを閉じる
+        commentTextField.resignFirstResponder()
     }
     
     //キーボードを閉じる(画面タップ時)
@@ -165,6 +173,35 @@ class Room4ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         // キーボードを閉じる
         textField.resignFirstResponder()
         return true
+    }
+    /// Notification発行
+    func configureObserver() {
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow(_:)),
+                                 name: UIResponder.keyboardWillShowNotification, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide(_:)),
+                                 name: UIResponder.keyboardWillHideNotification, object: nil)
+        print("Notificationを発行")
+    }
+    
+    /// キーボードが表示時に画面をずらす。
+    @objc func keyboardWillShow(_ notification: Notification?) {
+        guard let rect = (notification?.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
+            let duration = notification?.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+        UIView.animate(withDuration: duration) {
+            let transform = CGAffineTransform(translationX: 0, y: -((rect.size.height)+50))
+            self.view.transform = transform
+        }
+        print("keyboardWillShowを実行")
+    }
+    
+    /// キーボードが降りたら画面を戻す
+    @objc func keyboardWillHide(_ notification: Notification?) {
+        guard let duration = notification?.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? TimeInterval else { return }
+        UIView.animate(withDuration: duration) {
+            self.view.transform = CGAffineTransform.identity
+        }
+        print("keyboardWillHideを実行")
     }
     
 }

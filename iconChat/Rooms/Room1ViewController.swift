@@ -19,6 +19,8 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
+    let SCREEN_SIZE = UIScreen.main.bounds.size
+    
     var postArray: [PostData] = []
     // インスタンス変数
     var DBRef:DatabaseReference!
@@ -54,6 +56,46 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
 
     }
     
+    //キーボードを閉じる(画面タップ時)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    //キーボードを閉じる(return押下し時)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+    /// Notification発行
+    func configureObserver() {
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow(_:)),
+                                 name: UIResponder.keyboardWillShowNotification, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide(_:)),
+                                 name: UIResponder.keyboardWillHideNotification, object: nil)
+        print("Notificationを発行")
+    }
+    
+    /// キーボードが表示時に画面をずらす。
+    @objc func keyboardWillShow(_ notification: Notification?) {
+        guard let rect = (notification?.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
+            let duration = notification?.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+        UIView.animate(withDuration: duration) {
+            let transform = CGAffineTransform(translationX: 0, y: -((rect.size.height)+50))
+            self.view.transform = transform
+        }
+        print("keyboardWillShowを実行")
+    }
+    
+    /// キーボードが降りたら画面を戻す
+    @objc func keyboardWillHide(_ notification: Notification?) {
+        guard let duration = notification?.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? TimeInterval else { return }
+        UIView.animate(withDuration: duration) {
+            self.view.transform = CGAffineTransform.identity
+        }
+        print("keyboardWillHideを実行")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
     }
@@ -69,6 +111,8 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("DEBUG_PRINT: viewWillAppear")
+        
+        configureObserver()  //Notification発行
         
         if Auth.auth().currentUser != nil {
             if self.observing == false {
@@ -137,7 +181,7 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     
     //退室ボタン
     @IBAction func outButton(_ sender: Any) {
-        
+
         // 全てのモーダルを閉じる
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
         // HUDで投稿完了を表示する
@@ -155,6 +199,7 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         // postDataに必要な情報を取得しておく
         let name = Auth.auth().currentUser?.displayName
         let comment = commentTextField.text
+        //空欄は送れない
         if comment == "" {
             return
         }
@@ -164,19 +209,9 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         postRef.childByAutoId().setValue(postDic)
         
         commentTextField.text = ""
-    }
-    
-    //キーボードを閉じる(画面タップ時)
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        self.tableView.endEditing(true)
-    }
-    
-    //キーボードを閉じる(return押下し時)
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる
-        textField.resignFirstResponder()
-        return true
+        commentTextField.resignFirstResponder()
+        
     }
     
 }
