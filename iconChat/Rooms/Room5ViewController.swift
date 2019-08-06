@@ -11,6 +11,8 @@ class Room5ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @IBOutlet weak var imageView: UIImageView!
     
     var number : Int = 0
+    let number1Ref = Database.database().reference().child("numbers5")
+    let numberRef = Database.database().reference()
     var postArray: [PostData] = []
     // DatabaseのobserveEventの登録状態を表す
     var observing = false
@@ -18,6 +20,20 @@ class Room5ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //データの取得
+        number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+            print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
+            //numbers/Room1/numberの値に+1したい
+            self.number+=1
+            //データ保存
+            self.numberRef.child("numbers5").setValue(self.number)
+            //表示
+            self.numberLabel.text! = "Room5:\(self.number)人"
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
         
         let photoURLString = Auth.auth().currentUser?.photoURL?.absoluteString
         let reference = Storage.storage().reference(forURL: photoURLString!)
@@ -130,6 +146,21 @@ class Room5ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     
     //退室ボタン
     @IBAction func outButton(_ sender: Any) {
+        
+        //データの取得
+        number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+            print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
+            //numbers/Room1/numberの値に+1したい
+            self.number-=1
+            //データ保存
+            self.numberRef.child("numbers5").setValue(self.number)
+            //表示
+            self.numberLabel.text! = "Room5:\(self.number)人"
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
         // 全てのモーダルを閉じる
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
         // HUDで投稿完了を表示する

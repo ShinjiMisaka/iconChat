@@ -20,15 +20,32 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @IBOutlet weak var imageView: UIImageView!
     
     let SCREEN_SIZE = UIScreen.main.bounds.size
-    
+    let number1Ref = Database.database().reference().child("numbers1")
+    let numberRef = Database.database().reference()
     var postArray: [PostData] = []
-    // インスタンス変数
-    var DBRef:DatabaseReference!
+    
+    var number = 0
+    
+    
     // DatabaseのobserveEventの登録状態を表す
     var observing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //データの取得
+        number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+            print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
+            //numbers/Room1/numberの値に+1したい
+            self.number+=1
+            //データ保存
+            self.numberRef.child("numbers1").setValue(self.number)
+            //表示
+            self.numberLabel.text! = "Room1:\(self.number)人"
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
         
         //アイコンの設定
         let photoURLString = Auth.auth().currentUser?.photoURL?.absoluteString
@@ -181,6 +198,20 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     
     //退室ボタン
     @IBAction func outButton(_ sender: Any) {
+        
+        //データの取得
+        number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+            print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
+            //numbers/Room1/numberの値に+1したい
+            self.number-=1
+            //データ保存
+            self.numberRef.child("numbers1").setValue(self.number)
+            //表示
+            self.numberLabel.text! = "Room1:\(self.number)人"
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
 
         // 全てのモーダルを閉じる
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)

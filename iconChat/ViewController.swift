@@ -30,6 +30,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //デリゲート
         nameTextField.delegate = self
         //関数
