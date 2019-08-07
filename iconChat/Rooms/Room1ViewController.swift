@@ -25,8 +25,7 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     var postArray: [PostData] = []
     
     var number = 0
-    
-    
+
     // DatabaseのobserveEventの登録状態を表す
     var observing = false
     
@@ -172,6 +171,18 @@ class Room1ViewController: UIViewController,UITextFieldDelegate, UITableViewData
                         
                         // TableViewを再表示する
                         self.tableView.reloadData()
+                    }
+                })
+                numberRef.observe(.childChanged, with: { snapshot in
+                    print("DEBUG_PRINT: .childChangedイベントが発生しました。")
+                    //データの取得
+                    self.number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+                        print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
+                        //表示
+                        self.numberLabel.text! = "Room1:\(self.number)人"
+                        
+                    }){ (error) in
+                        print(error.localizedDescription)
                     }
                 })
                 

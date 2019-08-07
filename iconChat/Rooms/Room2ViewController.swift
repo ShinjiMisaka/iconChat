@@ -12,7 +12,7 @@ class Room2ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @IBOutlet weak var imageView: UIImageView!
     
     var number : Int = 0
-    let number1Ref = Database.database().reference().child("numbers2")
+    let number2Ref = Database.database().reference().child("numbers2")
     let numberRef = Database.database().reference()
     var postArray: [PostData] = []
     // DatabaseのobserveEventの登録状態を表す
@@ -23,7 +23,7 @@ class Room2ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         super.viewDidLoad()
         
         //データの取得
-        number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+        number2Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
             print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
             //numbers/Room1/numberの値に+1したい
             self.number+=1
@@ -124,6 +124,19 @@ class Room2ViewController: UIViewController,UITextFieldDelegate, UITableViewData
                     }
                 })
                 
+                numberRef.observe(.childChanged, with: { snapshot in
+                    print("DEBUG_PRINT: .childChangedイベントが発生しました。")
+                    //データの取得
+                    self.number2Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+                        print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
+                        //表示
+                        self.numberLabel.text! = "Room2:\(self.number)人"
+                        
+                    }){ (error) in
+                        print(error.localizedDescription)
+                    }
+                })
+                
                 // DatabaseのobserveEventが上記コードにより登録されたため
                 // trueとする
                 observing = true
@@ -149,7 +162,7 @@ class Room2ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @IBAction func outButton(_ sender: Any) {
         
         //データの取得
-        number1Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
+        number2Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
             print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
             //numbers/Room1/numberの値に+1したい
             self.number-=1
