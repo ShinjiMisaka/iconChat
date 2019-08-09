@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class loginViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class loginViewController: UIViewController {
     }
     //ログインボタンタップ時
     @IBAction func handleLoginButton(_ sender: Any) {
+        
+        SVProgressHUD.show(withStatus: "ログイン中")
         
         if let address = mailAddress.text, let password = password.text {
             
@@ -34,6 +37,9 @@ class loginViewController: UIViewController {
                 }
                 print("DEBUG_PRINT: ログインに成功しました。")
                 
+                SVProgressHUD.showSuccess(withStatus: "ログイン完了")
+                SVProgressHUD.dismiss(withDelay: 1)
+                
                 // 画面を閉じてViewControllerに戻る
                 self.dismiss(animated: true, completion: nil)
             }
@@ -42,6 +48,8 @@ class loginViewController: UIViewController {
     }
     //アカウント作成ボタンタップ時
     @IBAction func handleCreateAccountButton(_ sender: Any) {
+        
+        SVProgressHUD.show(withStatus: "アカウント作成中")
         
         if let address = mailAddress.text, let password = password.text {
             
@@ -59,6 +67,9 @@ class loginViewController: UIViewController {
                     return
                 }
                 print("DEBUG_PRINT: ユーザー作成に成功しました。")
+                
+                SVProgressHUD.showSuccess(withStatus: "アカウント作成完了")
+                SVProgressHUD.dismiss(withDelay: 1)
                 
                 // 画面を閉じてViewControllerに戻る
                 self.dismiss(animated: true, completion: nil)
