@@ -21,8 +21,6 @@ class loginViewController: UIViewController {
     //ログインボタンタップ時
     @IBAction func handleLoginButton(_ sender: Any) {
         
-        SVProgressHUD.show(withStatus: "ログイン中")
-        
         if let address = mailAddress.text, let password = password.text {
             
             // アドレスとパスワード名のいずれかでも入力されていない時は何もしない
@@ -30,9 +28,13 @@ class loginViewController: UIViewController {
                 return
             }
             
+            SVProgressHUD.show(withStatus: "ログイン中")
+            
             Auth.auth().signIn(withEmail: address, password: password) { user, error in
                 if let error = error {
                     print("DEBUG_PRINT: " + error.localizedDescription)
+                    SVProgressHUD.showSuccess(withStatus: "ログイン失敗")
+                    SVProgressHUD.dismiss(withDelay: 1)
                     return
                 }
                 print("DEBUG_PRINT: ログインに成功しました。")
@@ -49,8 +51,6 @@ class loginViewController: UIViewController {
     //アカウント作成ボタンタップ時
     @IBAction func handleCreateAccountButton(_ sender: Any) {
         
-        SVProgressHUD.show(withStatus: "アカウント作成中")
-        
         if let address = mailAddress.text, let password = password.text {
             
             // アドレスとパスワードと表示名のいずれかでも入力されていない時は何もしない
@@ -59,11 +59,15 @@ class loginViewController: UIViewController {
                 return
             }
             
+            SVProgressHUD.show(withStatus: "アカウント作成中")
+            
             // アドレスとパスワードでユーザー作成。ユーザー作成に成功すると、自動的にログインする
             Auth.auth().createUser(withEmail: address, password: password) { user, error in
                 if let error = error {
                     // エラーがあったら原因をprintして、returnすることで以降の処理を実行せずに処理を終了する
                     print("DEBUG_PRINT: " + error.localizedDescription)
+                    SVProgressHUD.showSuccess(withStatus: "アカウント作成失敗")
+                    SVProgressHUD.dismiss(withDelay: 1)
                     return
                 }
                 print("DEBUG_PRINT: ユーザー作成に成功しました。")
