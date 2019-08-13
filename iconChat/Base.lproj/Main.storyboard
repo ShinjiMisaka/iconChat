@@ -305,7 +305,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7d-gM-pye">
-                                <rect key="frame" x="80" y="20" width="240" height="30"/>
+                                <rect key="frame" x="80" y="20" width="190" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rwv-gf-91b"/>
@@ -348,6 +348,17 @@
                                     <constraint firstAttribute="height" constant="30" id="onX-dU-CKK"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HY-Ml-i6O">
+                                <rect key="frame" x="270" y="20" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62431636079999997" blue="0.32559728539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kKO-qV-2j9"/>
+                                    <constraint firstAttribute="width" constant="50" id="wC6-O6-yID"/>
+                                </constraints>
+                                <state key="normal" title="通報">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -362,20 +373,23 @@
                             <constraint firstItem="Ry1-l2-3BT" firstAttribute="leading" secondItem="KzB-TU-0NY" secondAttribute="leading" id="LOt-7V-Jnt"/>
                             <constraint firstItem="Crr-9Y-XLe" firstAttribute="centerY" secondItem="Ry1-l2-3BT" secondAttribute="centerY" id="Qe9-sn-vws"/>
                             <constraint firstItem="dNR-VF-r0V" firstAttribute="top" secondItem="KzB-TU-0NY" secondAttribute="top" id="RHD-Yz-H28"/>
+                            <constraint firstItem="8HY-Ml-i6O" firstAttribute="leading" secondItem="b7d-gM-pye" secondAttribute="trailing" id="XzT-EK-kzv"/>
                             <constraint firstItem="tvN-qh-ui1" firstAttribute="top" secondItem="dNR-VF-r0V" secondAttribute="bottom" id="ZQs-Tw-3O8"/>
                             <constraint firstItem="Crr-9Y-XLe" firstAttribute="leading" secondItem="Ry1-l2-3BT" secondAttribute="trailing" id="agE-gc-Pi9"/>
                             <constraint firstItem="Crr-9Y-XLe" firstAttribute="top" secondItem="tvN-qh-ui1" secondAttribute="bottom" id="aoZ-C5-J94"/>
-                            <constraint firstItem="KzB-TU-0NY" firstAttribute="trailing" secondItem="b7d-gM-pye" secondAttribute="trailing" id="eGS-0c-PlX"/>
                             <constraint firstItem="KzB-TU-0NY" firstAttribute="trailing" secondItem="Crr-9Y-XLe" secondAttribute="trailing" id="eus-H8-ZuX"/>
                             <constraint firstItem="KzB-TU-0NY" firstAttribute="trailing" secondItem="Crr-9Y-XLe" secondAttribute="trailing" id="fOv-9e-eG9"/>
                             <constraint firstItem="Ry1-l2-3BT" firstAttribute="bottom" secondItem="KzB-TU-0NY" secondAttribute="bottom" id="iNC-QK-ozw"/>
+                            <constraint firstItem="KzB-TU-0NY" firstAttribute="trailing" secondItem="8HY-Ml-i6O" secondAttribute="trailing" id="kkw-Nl-9av"/>
                             <constraint firstItem="tvN-qh-ui1" firstAttribute="leading" secondItem="KzB-TU-0NY" secondAttribute="leading" id="knf-SX-p2V"/>
+                            <constraint firstItem="8HY-Ml-i6O" firstAttribute="top" secondItem="KzB-TU-0NY" secondAttribute="top" id="ms2-et-bcO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KzB-TU-0NY"/>
                     </view>
                     <connections>
                         <outlet property="commentTextField" destination="Ry1-l2-3BT" id="iqD-9T-QXk"/>
                         <outlet property="imageView" destination="Glq-wq-5lC" id="qoS-Cs-IeM"/>
+                        <outlet property="mailButton" destination="8HY-Ml-i6O" id="1DS-aO-pJb"/>
                         <outlet property="numberLabel" destination="b7d-gM-pye" id="azk-ta-4pA"/>
                         <outlet property="tableView" destination="tvN-qh-ui1" id="2dc-86-DuI"/>
                     </connections>
@@ -408,7 +422,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6A-zi-3mD">
-                                <rect key="frame" x="80" y="20" width="240" height="30"/>
+                                <rect key="frame" x="80" y="20" width="190" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Jld-hH-U6P"/>
@@ -452,6 +466,17 @@
                                     <constraint firstAttribute="height" constant="30" id="bQH-DF-W0X"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLk-h0-w3c">
+                                <rect key="frame" x="270" y="20" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62431636079999997" blue="0.32559728539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hpB-db-7aj"/>
+                                    <constraint firstAttribute="width" constant="50" id="nDc-AG-xta"/>
+                                </constraints>
+                                <state key="normal" title="通報">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -460,13 +485,15 @@
                             <constraint firstItem="Xdy-gK-4Ym" firstAttribute="leading" secondItem="pxo-lw-gW0" secondAttribute="leading" id="N9J-nT-HPA"/>
                             <constraint firstItem="lok-kA-dls" firstAttribute="trailing" secondItem="pxo-lw-gW0" secondAttribute="trailing" id="NB7-oy-caF"/>
                             <constraint firstItem="e7r-IC-e3H" firstAttribute="top" secondItem="lok-kA-dls" secondAttribute="bottom" id="Rx7-eA-eaR"/>
+                            <constraint firstItem="oLk-h0-w3c" firstAttribute="top" secondItem="pxo-lw-gW0" secondAttribute="top" id="TRH-5g-MSj"/>
                             <constraint firstItem="RjP-4n-Uh0" firstAttribute="leading" secondItem="pxo-lw-gW0" secondAttribute="leading" id="VBr-dk-UES"/>
                             <constraint firstItem="lok-kA-dls" firstAttribute="top" secondItem="RjP-4n-Uh0" secondAttribute="bottom" id="Xj6-jt-nRb"/>
                             <constraint firstItem="e7r-IC-e3H" firstAttribute="bottom" secondItem="pxo-lw-gW0" secondAttribute="bottom" id="ZI4-Qe-fRp"/>
                             <constraint firstItem="Xdy-gK-4Ym" firstAttribute="bottom" secondItem="pxo-lw-gW0" secondAttribute="bottom" id="b81-4d-tbL"/>
                             <constraint firstItem="RjP-4n-Uh0" firstAttribute="top" secondItem="pxo-lw-gW0" secondAttribute="top" id="cpR-OS-2HG"/>
                             <constraint firstItem="e7r-IC-e3H" firstAttribute="trailing" secondItem="pxo-lw-gW0" secondAttribute="trailing" id="glO-yN-z1Y"/>
-                            <constraint firstItem="X6A-zi-3mD" firstAttribute="trailing" secondItem="pxo-lw-gW0" secondAttribute="trailing" id="itJ-wb-UJ1"/>
+                            <constraint firstItem="oLk-h0-w3c" firstAttribute="leading" secondItem="X6A-zi-3mD" secondAttribute="trailing" id="hIc-Fb-zIb"/>
+                            <constraint firstItem="pxo-lw-gW0" firstAttribute="trailing" secondItem="oLk-h0-w3c" secondAttribute="trailing" id="jAe-k4-MfV"/>
                             <constraint firstItem="X6A-zi-3mD" firstAttribute="leading" secondItem="BtP-nc-cX9" secondAttribute="trailing" id="jzz-ao-RHe"/>
                             <constraint firstItem="BtP-nc-cX9" firstAttribute="leading" secondItem="RjP-4n-Uh0" secondAttribute="trailing" id="r7s-FR-8ot"/>
                             <constraint firstItem="lok-kA-dls" firstAttribute="leading" secondItem="pxo-lw-gW0" secondAttribute="leading" id="tYK-8l-Iv1"/>
@@ -477,13 +504,14 @@
                     <connections>
                         <outlet property="commentTextField" destination="Xdy-gK-4Ym" id="ew8-SF-vE8"/>
                         <outlet property="imageView" destination="BtP-nc-cX9" id="xbY-uE-SsX"/>
+                        <outlet property="mailButton" destination="oLk-h0-w3c" id="Ghr-tz-pRx"/>
                         <outlet property="numberLabel" destination="X6A-zi-3mD" id="b05-DM-iUn"/>
                         <outlet property="tableView" destination="lok-kA-dls" id="XGt-ZZ-xaQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3s-RU-23Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1618" y="1611"/>
+            <point key="canvasLocation" x="-1618.125" y="1610.9154929577464"/>
         </scene>
         <!--Room3 View Controller-->
         <scene sceneID="Pe9-cx-ok5">
@@ -509,7 +537,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP6-N5-SZS">
-                                <rect key="frame" x="80" y="20" width="240" height="30"/>
+                                <rect key="frame" x="80" y="20" width="190" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2KK-GD-JdD"/>
@@ -556,6 +584,17 @@
                                     <constraint firstAttribute="height" constant="30" id="ffY-Vt-ULK"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbI-cq-0xO">
+                                <rect key="frame" x="270" y="20" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62431636079999997" blue="0.32559728539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jNR-2w-rk1"/>
+                                    <constraint firstAttribute="width" constant="50" id="zGO-5s-zEO"/>
+                                </constraints>
+                                <state key="normal" title="通報">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -567,13 +606,15 @@
                             <constraint firstItem="rbN-kc-rFN" firstAttribute="leading" secondItem="0hV-8d-5Lt" secondAttribute="leading" id="IM2-s5-QWX"/>
                             <constraint firstItem="KP6-N5-SZS" firstAttribute="top" secondItem="0hV-8d-5Lt" secondAttribute="top" id="Kny-Bt-fMp"/>
                             <constraint firstItem="mu1-jq-k1J" firstAttribute="bottom" secondItem="0hV-8d-5Lt" secondAttribute="bottom" id="L3G-0A-jyn"/>
+                            <constraint firstItem="0hV-8d-5Lt" firstAttribute="trailing" secondItem="fbI-cq-0xO" secondAttribute="trailing" id="OWn-tU-U7h"/>
                             <constraint firstItem="KP6-N5-SZS" firstAttribute="leading" secondItem="t9y-mh-Y9Q" secondAttribute="trailing" id="QL5-W8-SrV"/>
-                            <constraint firstItem="0hV-8d-5Lt" firstAttribute="trailing" secondItem="KP6-N5-SZS" secondAttribute="trailing" id="Z54-6L-9Jv"/>
                             <constraint firstItem="88M-JC-pSs" firstAttribute="bottom" secondItem="0hV-8d-5Lt" secondAttribute="bottom" id="aAM-Ez-53y"/>
                             <constraint firstItem="88M-JC-pSs" firstAttribute="top" secondItem="rbN-kc-rFN" secondAttribute="bottom" id="aRG-NS-NLM"/>
                             <constraint firstItem="88M-JC-pSs" firstAttribute="leading" secondItem="mu1-jq-k1J" secondAttribute="trailing" id="bWx-Xo-S6t"/>
                             <constraint firstItem="mu1-jq-k1J" firstAttribute="leading" secondItem="0hV-8d-5Lt" secondAttribute="leading" id="dsz-hJ-lW7"/>
+                            <constraint firstItem="fbI-cq-0xO" firstAttribute="top" secondItem="0hV-8d-5Lt" secondAttribute="top" id="gBg-X4-Ab7"/>
                             <constraint firstItem="t9y-mh-Y9Q" firstAttribute="leading" secondItem="3Dj-3b-mqz" secondAttribute="trailing" id="hgL-FJ-Ud2"/>
+                            <constraint firstItem="fbI-cq-0xO" firstAttribute="leading" secondItem="KP6-N5-SZS" secondAttribute="trailing" id="igv-R7-lZ9"/>
                             <constraint firstItem="rbN-kc-rFN" firstAttribute="top" secondItem="3Dj-3b-mqz" secondAttribute="bottom" id="tob-w9-sPh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0hV-8d-5Lt"/>
@@ -581,13 +622,14 @@
                     <connections>
                         <outlet property="commentTextField" destination="mu1-jq-k1J" id="pbt-tN-T3W"/>
                         <outlet property="imageView" destination="t9y-mh-Y9Q" id="XL3-za-AFl"/>
+                        <outlet property="mailButton" destination="fbI-cq-0xO" id="6WH-iP-V4w"/>
                         <outlet property="numberLabel" destination="KP6-N5-SZS" id="Xa2-Hd-toa"/>
                         <outlet property="tableView" destination="rbN-kc-rFN" id="DMc-Nb-hEd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcO-Ht-946" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-960" y="1611"/>
+            <point key="canvasLocation" x="-960" y="1610.9154929577464"/>
         </scene>
         <!--Room4 View Controller-->
         <scene sceneID="vzN-XW-2Yg">
@@ -613,7 +655,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlS-e4-Ohk">
-                                <rect key="frame" x="80" y="20" width="240" height="30"/>
+                                <rect key="frame" x="80" y="20" width="190" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4T5-en-mAR"/>
@@ -660,10 +702,21 @@
                                     <constraint firstAttribute="width" constant="30" id="z1d-YI-wK5"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zti-E7-MlJ">
+                                <rect key="frame" x="270" y="20" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62431636079999997" blue="0.32559728539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4FY-zC-ynM"/>
+                                    <constraint firstAttribute="height" constant="30" id="COg-EF-uLk"/>
+                                </constraints>
+                                <state key="normal" title="通報">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hPx-AS-OpT" firstAttribute="trailing" secondItem="DlS-e4-Ohk" secondAttribute="trailing" id="4Vw-fr-ii2"/>
+                            <constraint firstItem="hPx-AS-OpT" firstAttribute="trailing" secondItem="zti-E7-MlJ" secondAttribute="trailing" id="0DU-iR-srP"/>
                             <constraint firstItem="ZUa-Bu-xSH" firstAttribute="leading" secondItem="hPx-AS-OpT" secondAttribute="leading" id="7Wd-vm-Ab0"/>
                             <constraint firstItem="MnG-eP-GUS" firstAttribute="top" secondItem="TJ7-e4-Y6M" secondAttribute="bottom" id="EyD-Mq-X4m"/>
                             <constraint firstItem="DlS-e4-Ohk" firstAttribute="top" secondItem="hPx-AS-OpT" secondAttribute="top" id="IcS-kQ-Swn"/>
@@ -675,7 +728,9 @@
                             <constraint firstItem="PXD-dO-lWl" firstAttribute="top" secondItem="hPx-AS-OpT" secondAttribute="top" id="c5j-Tk-8dY"/>
                             <constraint firstItem="PXD-dO-lWl" firstAttribute="leading" secondItem="GWL-uE-QvH" secondAttribute="trailing" id="cYz-TE-S4f"/>
                             <constraint firstItem="GWL-uE-QvH" firstAttribute="top" secondItem="hPx-AS-OpT" secondAttribute="top" id="cl7-hX-03h"/>
+                            <constraint firstItem="zti-E7-MlJ" firstAttribute="leading" secondItem="DlS-e4-Ohk" secondAttribute="trailing" id="cll-73-39e"/>
                             <constraint firstItem="ZUa-Bu-xSH" firstAttribute="bottom" secondItem="hPx-AS-OpT" secondAttribute="bottom" id="f6u-OB-Vm5"/>
+                            <constraint firstItem="zti-E7-MlJ" firstAttribute="top" secondItem="hPx-AS-OpT" secondAttribute="top" id="fLw-kS-Xmh"/>
                             <constraint firstItem="GWL-uE-QvH" firstAttribute="leading" secondItem="hPx-AS-OpT" secondAttribute="leading" id="rcd-VD-Zvg"/>
                             <constraint firstItem="MnG-eP-GUS" firstAttribute="leading" secondItem="ZUa-Bu-xSH" secondAttribute="trailing" id="uQc-Qb-o7n"/>
                             <constraint firstItem="hPx-AS-OpT" firstAttribute="trailing" secondItem="MnG-eP-GUS" secondAttribute="trailing" id="zSw-fk-JbE"/>
@@ -685,13 +740,14 @@
                     <connections>
                         <outlet property="commentTextField" destination="ZUa-Bu-xSH" id="D2O-U6-ZcQ"/>
                         <outlet property="imageView" destination="PXD-dO-lWl" id="jk1-nQ-QTA"/>
+                        <outlet property="mailButton" destination="zti-E7-MlJ" id="8gb-9p-S0k"/>
                         <outlet property="numberLabel" destination="DlS-e4-Ohk" id="B1D-WJ-aZp"/>
                         <outlet property="tableView" destination="TJ7-e4-Y6M" id="1ko-i5-KKB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlA-4Z-ecB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-283" y="1611"/>
+            <point key="canvasLocation" x="-283.125" y="1610.9154929577464"/>
         </scene>
         <!--Room5 View Controller-->
         <scene sceneID="WK2-dA-9uB">
@@ -717,7 +773,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNY-SK-jft">
-                                <rect key="frame" x="80" y="20" width="240" height="30"/>
+                                <rect key="frame" x="80" y="20" width="190" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CMH-Ht-Ov4"/>
@@ -764,13 +820,26 @@
                                     <constraint firstAttribute="width" constant="30" id="pTG-Qz-hYX"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcH-t5-olV">
+                                <rect key="frame" x="270" y="20" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62431636079999997" blue="0.32559728539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Oj4-NI-kOz"/>
+                                    <constraint firstAttribute="width" constant="50" id="XmF-se-K4c"/>
+                                </constraints>
+                                <state key="normal" title="通報 ">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="CcH-t5-olV" firstAttribute="top" secondItem="l7a-7q-vs1" secondAttribute="top" id="0jx-Sr-MlK"/>
                             <constraint firstItem="Ayw-RM-W3F" firstAttribute="bottom" secondItem="l7a-7q-vs1" secondAttribute="bottom" id="4Rs-tr-PNA"/>
                             <constraint firstItem="MNY-SK-jft" firstAttribute="leading" secondItem="bUs-VU-i6s" secondAttribute="trailing" id="9aX-9D-xNs"/>
-                            <constraint firstItem="l7a-7q-vs1" firstAttribute="trailing" secondItem="MNY-SK-jft" secondAttribute="trailing" id="9ae-bV-RLz"/>
+                            <constraint firstItem="l7a-7q-vs1" firstAttribute="trailing" secondItem="CcH-t5-olV" secondAttribute="trailing" id="BLB-mN-0fk"/>
                             <constraint firstItem="MqH-sH-fgb" firstAttribute="trailing" secondItem="l7a-7q-vs1" secondAttribute="trailing" id="Gtq-Jk-WcZ"/>
+                            <constraint firstItem="CcH-t5-olV" firstAttribute="leading" secondItem="MNY-SK-jft" secondAttribute="trailing" id="ITs-nb-f4a"/>
                             <constraint firstItem="Lr7-cA-LXW" firstAttribute="top" secondItem="l7a-7q-vs1" secondAttribute="top" id="KpP-ck-eEb"/>
                             <constraint firstItem="Lr7-cA-LXW" firstAttribute="leading" secondItem="l7a-7q-vs1" secondAttribute="leading" id="QAT-ao-oEB"/>
                             <constraint firstItem="MNY-SK-jft" firstAttribute="top" secondItem="l7a-7q-vs1" secondAttribute="top" id="VBu-2g-qMH"/>
@@ -789,13 +858,14 @@
                     <connections>
                         <outlet property="commentTextField" destination="ggt-jJ-Wje" id="fX6-FE-H1s"/>
                         <outlet property="imageView" destination="bUs-VU-i6s" id="go2-5u-MJP"/>
+                        <outlet property="mailButton" destination="CcH-t5-olV" id="zW0-dh-N0V"/>
                         <outlet property="numberLabel" destination="MNY-SK-jft" id="sXJ-Cl-3AA"/>
                         <outlet property="tableView" destination="MqH-sH-fgb" id="bXm-fA-ZRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Py9-fj-75W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="401" y="1611"/>
+            <point key="canvasLocation" x="399.375" y="1610.9154929577464"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="qJD-GI-Cae">

@@ -2,14 +2,16 @@ import UIKit
 import Firebase
 import FirebaseUI
 import SVProgressHUD
+import MessageUI
 
-class Room3ViewController: UIViewController,UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate  {
+class Room3ViewController: UIViewController,UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate,MFMailComposeViewControllerDelegate  {
     
     
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mailButton: UIButton!
     
     var number : Int = 0
     let number3Ref = Database.database().reference().child("numbers3")
@@ -21,7 +23,9 @@ class Room3ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //通報ボタン
+        mailButton.addTarget(self, action: #selector(Room3ViewController.startMailer(sender:)), for: .touchUpInside)
+        self.view.addSubview(mailButton)
         //データの取得
         number3Ref.observeSingleEvent(of: .value, with: { (snapshot) in self.number = snapshot.value! as! Int
             print("DEBUG_PRINT: .observeSingleEventイベントが発生しました。")
@@ -72,6 +76,42 @@ class Room3ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         cell.setPostData(postArray[indexPath.row])
         
         return cell
+    }
+    
+    //メーラー
+    @objc func startMailer(sender: UIButton) {
+        
+        let mailViewController = MFMailComposeViewController()
+        let toRecipients = ["shinjimisaka@me.com"]
+        
+        mailViewController.mailComposeDelegate = self
+        mailViewController.setSubject("通報問い合わせ")
+        mailViewController.setToRecipients(toRecipients) //Toアドレスの表示
+        mailViewController.setMessageBody("通報したいユーザーのID：\n通報内容：", isHTML: false)
+        
+        present(mailViewController, animated: true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        switch result {
+        case .cancelled:
+            print("キャンセルしました")
+            self.dismiss(animated: true, completion: nil)
+        case .saved:
+            print("セーブしました")
+            self.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("送信しました")
+            self.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("失敗しました。")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
