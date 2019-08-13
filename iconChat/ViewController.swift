@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FirebaseUI
 import SVProgressHUD
+import MessageUI
 
-class ViewController: UIViewController,UITextFieldDelegate {
+class ViewController: UIViewController,UITextFieldDelegate,MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -24,13 +25,16 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var button9: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var mailButton: UIButton!
     var iconURL = URL(string: "gs://iconchat-1f5b4.appspot.com/nothing2.png")
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //通報ボタン
+        mailButton.addTarget(self, action: #selector(ViewController.startMailer(sender:)), for: .touchUpInside)
+        self.view.addSubview(mailButton)
         //デリゲート
         nameTextField.delegate = self
         //関数
@@ -55,6 +59,42 @@ class ViewController: UIViewController,UITextFieldDelegate {
             self.present(loginViewController!, animated: true, completion: nil)
         }
         
+    }
+    
+    //メーラー
+    @objc func startMailer(sender: UIButton) {
+        
+        let mailViewController = MFMailComposeViewController()
+        let toRecipients = ["shinjimisaka@me.com"]
+        
+        mailViewController.mailComposeDelegate = self
+        mailViewController.setSubject("お問い合わせ")
+        mailViewController.setToRecipients(toRecipients) //Toアドレスの表示
+        mailViewController.setMessageBody("お問い合わせ内容：", isHTML: false)
+        
+        present(mailViewController, animated: true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        switch result {
+        case .cancelled:
+            print("キャンセルしました")
+            self.dismiss(animated: true, completion: nil)
+        case .saved:
+            print("セーブしました")
+            self.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("送信しました")
+            self.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("失敗しました。")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func initButton() {

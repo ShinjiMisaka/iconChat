@@ -113,6 +113,12 @@
                                     <action selector="button9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ms-xW-hP2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRx-o3-pbX">
+                                <rect key="frame" x="0.0" y="544" width="62" height="24"/>
+                                <color key="backgroundColor" red="1" green="0.62431636079999997" blue="0.32559728539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="お問い合わせ"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -123,6 +129,7 @@
                             <constraint firstItem="qgo-6V-cKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="850-1n-sYl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qgo-6V-cKo" secondAttribute="trailing" constant="10" id="AAx-O0-ebE"/>
                             <constraint firstItem="YXy-n7-g3n" firstAttribute="top" secondItem="WvW-Qn-7cO" secondAttribute="bottom" constant="10" id="ACS-js-69g"/>
+                            <constraint firstItem="aRx-o3-pbX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Aol-z3-b0r"/>
                             <constraint firstItem="oKe-iY-QCm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ayg-UJ-DUG"/>
                             <constraint firstItem="YXy-n7-g3n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EwG-8c-WpO"/>
                             <constraint firstItem="WQD-f9-KBO" firstAttribute="leading" secondItem="6Ap-CF-2oV" secondAttribute="trailing" constant="10" id="Kon-Kk-s2O"/>
@@ -136,6 +143,7 @@
                             <constraint firstItem="WvW-Qn-7cO" firstAttribute="top" secondItem="Ze6-57-4cY" secondAttribute="bottom" constant="5" id="YaI-uS-zKM"/>
                             <constraint firstItem="6Ap-CF-2oV" firstAttribute="top" secondItem="YXy-n7-g3n" secondAttribute="bottom" constant="10" id="ZDl-Mb-atv"/>
                             <constraint firstItem="Ze6-57-4cY" firstAttribute="top" secondItem="OWd-Am-aKJ" secondAttribute="bottom" constant="5" id="a6k-C7-tz7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aRx-o3-pbX" secondAttribute="bottom" id="aav-zE-x9D"/>
                             <constraint firstItem="6Ap-CF-2oV" firstAttribute="leading" secondItem="lMT-5q-dOW" secondAttribute="trailing" constant="10" id="bFp-q6-1Wv"/>
                             <constraint firstItem="6Ap-CF-2oV" firstAttribute="centerY" secondItem="lMT-5q-dOW" secondAttribute="centerY" id="g6N-2b-JPT"/>
                             <constraint firstItem="OWd-Am-aKJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gkA-QH-wbz"/>
@@ -163,6 +171,7 @@
                         <outlet property="button8" destination="6Ap-CF-2oV" id="UJ8-ua-9UT"/>
                         <outlet property="button9" destination="WQD-f9-KBO" id="eiM-oZ-yGa"/>
                         <outlet property="iconImageView" destination="oKe-iY-QCm" id="Fe7-eI-r71"/>
+                        <outlet property="mailButton" destination="aRx-o3-pbX" id="M2D-dZ-nCq"/>
                         <outlet property="nameTextField" destination="OWd-Am-aKJ" id="uCh-wv-1ge"/>
                     </connections>
                 </viewController>
