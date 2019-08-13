@@ -15,6 +15,13 @@
 		D0454E4322F3E7D100428E8A /* nothing2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0454E4022F3E7D100428E8A /* nothing2@3x.png */; };
 		D0454E4422F3E7D100428E8A /* nothing2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0454E4122F3E7D100428E8A /* nothing2@2x.png */; };
 		D0454E4522F3E7D100428E8A /* nothing2.png in Resources */ = {isa = PBXBuildFile; fileRef = D0454E4222F3E7D100428E8A /* nothing2.png */; };
+		D056B26C230283EE00596BCA /* agreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D056B26B230283EE00596BCA /* agreeViewController.swift */; };
+		D056B27F23028A7700596BCA /* check_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D056B27923028A7600596BCA /* check_on@2x.png */; };
+		D056B28023028A7700596BCA /* check_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D056B27A23028A7600596BCA /* check_on@3x.png */; };
+		D056B28123028A7700596BCA /* check_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D056B27B23028A7600596BCA /* check_off@2x.png */; };
+		D056B28223028A7700596BCA /* check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = D056B27C23028A7700596BCA /* check_on.png */; };
+		D056B28323028A7700596BCA /* check_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D056B27D23028A7700596BCA /* check_off@3x.png */; };
+		D056B28423028A7700596BCA /* check_off.png in Resources */ = {isa = PBXBuildFile; fileRef = D056B27E23028A7700596BCA /* check_off.png */; };
 		D064D9BE22EF79940072E83E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D9BC22EF79940072E83E /* PostTableViewCell.swift */; };
 		D064D9BF22EF79940072E83E /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D064D9BD22EF79940072E83E /* PostTableViewCell.xib */; };
 		D07B5BFF22E21755006B339C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B5BFE22E21755006B339C /* AppDelegate.swift */; };
@@ -70,6 +77,13 @@
 		D0454E4022F3E7D100428E8A /* nothing2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nothing2@3x.png"; path = "../../../chatIconImage/nothing2@3x.png"; sourceTree = "<group>"; };
 		D0454E4122F3E7D100428E8A /* nothing2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nothing2@2x.png"; path = "../../../chatIconImage/nothing2@2x.png"; sourceTree = "<group>"; };
 		D0454E4222F3E7D100428E8A /* nothing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nothing2.png; path = ../../../chatIconImage/nothing2.png; sourceTree = "<group>"; };
+		D056B26B230283EE00596BCA /* agreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agreeViewController.swift; sourceTree = "<group>"; };
+		D056B27923028A7600596BCA /* check_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_on@2x.png"; sourceTree = "<group>"; };
+		D056B27A23028A7600596BCA /* check_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_on@3x.png"; sourceTree = "<group>"; };
+		D056B27B23028A7600596BCA /* check_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_off@2x.png"; sourceTree = "<group>"; };
+		D056B27C23028A7700596BCA /* check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_on.png; sourceTree = "<group>"; };
+		D056B27D23028A7700596BCA /* check_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_off@3x.png"; sourceTree = "<group>"; };
+		D056B27E23028A7700596BCA /* check_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_off.png; sourceTree = "<group>"; };
 		D064D9BC22EF79940072E83E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		D064D9BD22EF79940072E83E /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		D07B5BFB22E21755006B339C /* iconChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iconChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,12 +184,19 @@
 				D07B5C0722E21756006B339C /* LaunchScreen.storyboard */,
 				D07B5BFE22E21755006B339C /* AppDelegate.swift */,
 				D033975222E8707A00B898B9 /* loginViewController.swift */,
+				D056B26B230283EE00596BCA /* agreeViewController.swift */,
 				D07B5C0022E21755006B339C /* ViewController.swift */,
 				D0F42A2822EE2AA000B95BAD /* SelectViewController.swift */,
 				D07B5C0222E21755006B339C /* Main.storyboard */,
 				D0D9BAE822F3C1E100C3CB37 /* Rooms */,
 				D0C7D4CC22F3E07B0003D6A2 /* common */,
 				D07B5C0522E21756006B339C /* Assets.xcassets */,
+				D056B27E23028A7700596BCA /* check_off.png */,
+				D056B27B23028A7600596BCA /* check_off@2x.png */,
+				D056B27D23028A7700596BCA /* check_off@3x.png */,
+				D056B27C23028A7700596BCA /* check_on.png */,
+				D056B27923028A7600596BCA /* check_on@2x.png */,
+				D056B27A23028A7600596BCA /* check_on@3x.png */,
 				D0FDD96522F4408100534614 /* icon.png */,
 				D0FDD96622F4408100534614 /* icon@2x.png */,
 				D0FDD96722F4408100534614 /* icon@3x.png */,
@@ -304,6 +325,7 @@
 				D07B5C8A22E21FD5006B339C /* girl@2x.png in Resources */,
 				D07B5C7322E21FD5006B339C /* god@2x.png in Resources */,
 				D07B5C8C22E21FD5006B339C /* oldman@2x.png in Resources */,
+				D056B28423028A7700596BCA /* check_off.png in Resources */,
 				D07B5C7B22E21FD5006B339C /* tono@2x.png in Resources */,
 				D07B5C7522E21FD5006B339C /* god@3x.png in Resources */,
 				D07B5C8B22E21FD5006B339C /* sportman.png in Resources */,
@@ -311,14 +333,18 @@
 				D07B5C7A22E21FD5006B339C /* man@2x.png in Resources */,
 				D064D9BF22EF79940072E83E /* PostTableViewCell.xib in Resources */,
 				D07B5C0922E21756006B339C /* LaunchScreen.storyboard in Resources */,
+				D056B28023028A7700596BCA /* check_on@3x.png in Resources */,
 				D07B5C0622E21756006B339C /* Assets.xcassets in Resources */,
+				D056B28223028A7700596BCA /* check_on.png in Resources */,
 				D07B5C8622E21FD5006B339C /* tono.png in Resources */,
 				D07B5C0422E21755006B339C /* Main.storyboard in Resources */,
 				D07B5C9222E22298006B339C /* death@x3.png in Resources */,
 				D07B5C7D22E21FD5006B339C /* magicman@2x.png in Resources */,
 				D07B5C7422E21FD5006B339C /* hime@3x.png in Resources */,
+				D056B27F23028A7700596BCA /* check_on@2x.png in Resources */,
 				D0FDD96822F4408200534614 /* icon.png in Resources */,
 				D0454E4422F3E7D100428E8A /* nothing2@2x.png in Resources */,
+				D056B28323028A7700596BCA /* check_off@3x.png in Resources */,
 				D07B5C8022E21FD5006B339C /* god.png in Resources */,
 				D07B5C7C22E21FD5006B339C /* tono@3x.png in Resources */,
 				D0FDD96922F4408200534614 /* icon@2x.png in Resources */,
@@ -332,6 +358,7 @@
 				D0ACB9A222E346D0006F155E /* GoogleService-Info.plist in Resources */,
 				D07B5C7922E21FD5006B339C /* man@3x.png in Resources */,
 				D07B5C7222E21FD5006B339C /* oldman@3x.png in Resources */,
+				D056B28123028A7700596BCA /* check_off@2x.png in Resources */,
 				D07B5C7122E21FD5006B339C /* hime@2x.png in Resources */,
 				D07B5C7622E21FD5006B339C /* sportman@3x.png in Resources */,
 			);
@@ -393,6 +420,7 @@
 				D0F42A2722EE282E00B95BAD /* Room1ViewController.swift in Sources */,
 				D0F42A2922EE2AA000B95BAD /* SelectViewController.swift in Sources */,
 				D02DC46D22F42BD400CC2A08 /* Room5ViewController.swift in Sources */,
+				D056B26C230283EE00596BCA /* agreeViewController.swift in Sources */,
 				D02DC46922F3ECE000CC2A08 /* Room3ViewController.swift in Sources */,
 				D07B5BFF22E21755006B339C /* AppDelegate.swift in Sources */,
 				D033975322E8707A00B898B9 /* loginViewController.swift in Sources */,

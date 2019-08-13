@@ -834,6 +834,7 @@
                                 </state>
                                 <connections>
                                     <action selector="handleLoginButton:" destination="TIn-BM-3vh" eventType="touchUpInside" id="rcc-ac-P3u"/>
+                                    <segue destination="anh-FQ-v2o" kind="presentation" id="Ucu-2j-7F8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY4-C2-ag3">
@@ -847,6 +848,7 @@
                                 </state>
                                 <connections>
                                     <action selector="handleCreateAccountButton:" destination="TIn-BM-3vh" eventType="touchUpInside" id="DC9-Pz-t69"/>
+                                    <segue destination="anh-FQ-v2o" kind="presentation" id="PxK-oI-HhU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -872,6 +874,80 @@
             </objects>
             <point key="canvasLocation" x="2038" y="128"/>
         </scene>
+        <!--Agree View Controller-->
+        <scene sceneID="mPy-Fe-xQ9">
+            <objects>
+                <viewController id="anh-FQ-v2o" customClass="agreeViewController" customModule="iconChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tT8-9p-DdI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ3-s3-BBl">
+                                <rect key="frame" x="84" y="202" width="162" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="利用規約に同意します" image="check_off.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="agreeButton:" destination="anh-FQ-v2o" eventType="touchUpInside" id="8fQ-Td-QGw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFN-Xa-Kpr">
+                                <rect key="frame" x="141" y="235" width="38" height="34"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="anh-FQ-v2o" eventType="touchUpInside" id="m1I-RH-sbS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf0-sv-jTf">
+                                <rect key="frame" x="10" y="30" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Chn-N4-YgI">
+                                <rect key="frame" x="10" y="64" width="300" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="qa2-rG-jHs"/>
+                                    <constraint firstAttribute="height" constant="128" id="rEw-TA-KPM"/>
+                                </constraints>
+                                <string key="text">サービスの利用は利用規約への同意が前提となります。他人に不快な思いをさせる発言や、誹謗中傷、個人情報、性的内容を示唆する発言を禁止します。このアプリ上で起きた利用者同士のトラブルには事業者は一切責任を負いません。当サービスで取得したメールアドレス等のユーザー情報は、第三者に開示しません。ユーザーが利用規約に違反した場合、アカウント停止のペナルティを定めます。状況によりサービスを一時中止したり、あるいは変更、終了することがあります。ユーザーに発生した損害について、事業者は賠償責任を負わないことを定めます。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rf0-sv-jTf" firstAttribute="centerX" secondItem="tT8-9p-DdI" secondAttribute="centerX" id="Hqg-IS-fxk"/>
+                            <constraint firstItem="xJ3-s3-BBl" firstAttribute="leading" secondItem="lhg-bp-igo" secondAttribute="leading" constant="84" id="K5G-0K-4hU"/>
+                            <constraint firstItem="Chn-N4-YgI" firstAttribute="centerX" secondItem="hFN-Xa-Kpr" secondAttribute="centerX" id="KdL-5f-oYt"/>
+                            <constraint firstItem="xJ3-s3-BBl" firstAttribute="top" secondItem="Chn-N4-YgI" secondAttribute="bottom" constant="10" id="Kwd-JA-lCS"/>
+                            <constraint firstItem="Rf0-sv-jTf" firstAttribute="leading" secondItem="lhg-bp-igo" secondAttribute="leading" constant="10" id="M0z-J8-i8M"/>
+                            <constraint firstItem="hFN-Xa-Kpr" firstAttribute="centerX" secondItem="tT8-9p-DdI" secondAttribute="centerX" id="Tiu-Tp-qoz"/>
+                            <constraint firstItem="Chn-N4-YgI" firstAttribute="top" secondItem="Rf0-sv-jTf" secondAttribute="bottom" constant="10" id="e6f-sg-dM1"/>
+                            <constraint firstItem="lhg-bp-igo" firstAttribute="trailing" secondItem="xJ3-s3-BBl" secondAttribute="trailing" constant="74" id="gMe-u6-TSP"/>
+                            <constraint firstItem="Chn-N4-YgI" firstAttribute="leading" secondItem="lhg-bp-igo" secondAttribute="leading" constant="10" id="hY2-UC-r2Y"/>
+                            <constraint firstItem="lhg-bp-igo" firstAttribute="trailing" secondItem="Rf0-sv-jTf" secondAttribute="trailing" constant="10" id="mvX-M8-QZq"/>
+                            <constraint firstItem="hFN-Xa-Kpr" firstAttribute="top" secondItem="xJ3-s3-BBl" secondAttribute="bottom" constant="10" id="pLG-bK-kWQ"/>
+                            <constraint firstItem="Chn-N4-YgI" firstAttribute="centerX" secondItem="tT8-9p-DdI" secondAttribute="centerX" id="rI8-Zw-1ab"/>
+                            <constraint firstItem="lhg-bp-igo" firstAttribute="trailing" secondItem="Chn-N4-YgI" secondAttribute="trailing" constant="10" id="v1N-9T-5Hr"/>
+                            <constraint firstItem="Rf0-sv-jTf" firstAttribute="top" secondItem="lhg-bp-igo" secondAttribute="top" constant="10" id="xzj-A6-MOM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lhg-bp-igo"/>
+                    </view>
+                    <connections>
+                        <outlet property="agreeButton" destination="xJ3-s3-BBl" id="gxs-9S-2n8"/>
+                        <outlet property="nextButton" destination="hFN-Xa-Kpr" id="xr0-Tn-uMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crd-Rj-QxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="877"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kDd-P8-6c9">
             <objects>
@@ -893,5 +969,9 @@
     </scenes>
     <resources>
         <image name="btn" width="16" height="16"/>
+        <image name="check_off.png" width="22.5" height="22.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PxK-oI-HhU"/>
+    </inferredMetricsTieBreakers>
 </document>
