@@ -7,6 +7,8 @@ class PostData: NSObject {
     var comment: String?
     var image: UIImage?
     var imageString: String?
+    var uid: String?
+    
     
     init(snapshot: DataSnapshot, myId: String) {
         self.id = snapshot.key
@@ -19,6 +21,8 @@ class PostData: NSObject {
         self.name = valueDictionary["name"] as? String
         
         self.comment = valueDictionary["comment"] as? String
+        
+        self.uid = valueDictionary["uid"] as? String
         
         }
     }

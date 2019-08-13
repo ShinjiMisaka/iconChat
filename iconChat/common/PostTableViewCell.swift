@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var commentTextLabel: UILabel!
     @IBOutlet weak var nameTextLabel: UILabel!
+    @IBOutlet weak var uidLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +34,8 @@ class PostTableViewCell: UITableViewCell {
         self.commentTextLabel.text = "\(postData.comment!)"
         
         self.nameTextLabel.text = "\(postData.name!)"
+        
+        self.uidLabel.text = "\(postData.uid!)"
        
     }
     

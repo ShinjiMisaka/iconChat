@@ -192,13 +192,14 @@ class Room2ViewController: UIViewController,UITextFieldDelegate, UITableViewData
         // postDataに必要な情報を取得しておく
         let name = Auth.auth().currentUser?.displayName
         let comment = commentTextField.text
+        let uid = Auth.auth().currentUser?.uid
         //空欄は送れない
         if comment == "" {
             return
         }
         // 辞書を作成してFirebaseに保存する
         let postRef = Database.database().reference().child("Room2")
-        let postDic = ["comment": comment , "image": imageString, "name": name!]
+        let postDic = ["comment": comment , "image": imageString, "name": name!,"uid":uid!]
         postRef.childByAutoId().setValue(postDic)
         
         commentTextField.text = ""
