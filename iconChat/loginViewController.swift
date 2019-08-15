@@ -41,6 +41,9 @@ class loginViewController: UIViewController {
                 
                 SVProgressHUD.showSuccess(withStatus: "ログイン完了")
                 SVProgressHUD.dismiss(withDelay: 1)
+                // 遷移
+                let agreeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Agree")
+                self.present(agreeViewController!, animated: true, completion: nil)
                 
             }
         }
@@ -72,6 +75,9 @@ class loginViewController: UIViewController {
                 
                 SVProgressHUD.showSuccess(withStatus: "アカウント作成完了")
                 SVProgressHUD.dismiss(withDelay: 1)
+                // 遷移
+                let agreeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Agree")
+                self.present(agreeViewController!, animated: true, completion: nil)
                 
             }
         }

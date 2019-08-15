@@ -913,7 +913,6 @@
                                 </state>
                                 <connections>
                                     <action selector="handleLoginButton:" destination="TIn-BM-3vh" eventType="touchUpInside" id="rcc-ac-P3u"/>
-                                    <segue destination="anh-FQ-v2o" kind="presentation" id="Ucu-2j-7F8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY4-C2-ag3">
@@ -927,7 +926,6 @@
                                 </state>
                                 <connections>
                                     <action selector="handleCreateAccountButton:" destination="TIn-BM-3vh" eventType="touchUpInside" id="DC9-Pz-t69"/>
-                                    <segue destination="anh-FQ-v2o" kind="presentation" id="PxK-oI-HhU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -956,7 +954,7 @@
         <!--Agree View Controller-->
         <scene sceneID="mPy-Fe-xQ9">
             <objects>
-                <viewController id="anh-FQ-v2o" customClass="agreeViewController" customModule="iconChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Agree" id="anh-FQ-v2o" customClass="agreeViewController" customModule="iconChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tT8-9p-DdI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1050,7 +1048,4 @@
         <image name="btn" width="16" height="16"/>
         <image name="check_off.png" width="22.5" height="22.5"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="PxK-oI-HhU"/>
-    </inferredMetricsTieBreakers>
 </document>
