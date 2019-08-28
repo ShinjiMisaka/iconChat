@@ -82,7 +82,7 @@ class Room2ViewController: UIViewController,UITextFieldDelegate, UITableViewData
     @objc func startMailer(sender: UIButton) {
         
         let mailViewController = MFMailComposeViewController()
-        let toRecipients = ["shinjimisaka@me.com"]
+        let toRecipients = ["info@chamidog.com"]
         
         mailViewController.mailComposeDelegate = self
         mailViewController.setSubject("通報問い合わせ")

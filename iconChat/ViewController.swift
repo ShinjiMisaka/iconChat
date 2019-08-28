@@ -65,7 +65,7 @@ class ViewController: UIViewController,UITextFieldDelegate,MFMailComposeViewCont
     @objc func startMailer(sender: UIButton) {
         
         let mailViewController = MFMailComposeViewController()
-        let toRecipients = ["shinjimisaka@me.com"]
+        let toRecipients = ["info@chamidog.com"]
         
         mailViewController.mailComposeDelegate = self
         mailViewController.setSubject("お問い合わせ")
